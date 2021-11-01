@@ -16,7 +16,7 @@ import (
 
 func main() {
 	wd, _ := os.Getwd()
-	ioPath := pathsvc.NewIOPath(wd, "one")
+	ioPath := pathsvc.NewIOPath(wd, "easy-api")
 	ioFactory := ossvc.NewIOFactory(ioPath)
 
 	generateFlag := flag.Bool("api", false, "generate api metadata.go")
@@ -25,6 +25,7 @@ func main() {
 		if err := apisvc.GenerateMetadata(ioFactory, ioPath, "github.com"); err != nil {
 			panic(err)
 		}
+		return
 	}
 
 	apiFactory := apisvc.NewFactory()
@@ -34,7 +35,7 @@ func main() {
 	app := gin.New()
 	ginsvc.NewPostOption(apiFactory)(app)
 	fmt.Println("gin启动")
-	err := app.Run(":9999")
+	err := app.Run(":10000")
 	if err != nil {
 		panic(err)
 	}

@@ -296,4 +296,4 @@ app.POST("/:endpoint/:api", func(ctx *gin.Context) {
 
 # 结束语
 
-以上就是基本的实现思路,源码也已经上传到了[GitHub.com](https://github.com/ahl5esoft/go-skill/tree/main/easy-api "GitHub.com")上了,如果有任何疑问或者优化方案欢迎告诉我,谢谢.
+以上就是基本的实现思路,如果有任何疑问或者优化方案欢迎告诉我,谢谢.
